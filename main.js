@@ -1,29 +1,34 @@
-let output;
 
-const parent= document.querySelector('.parent');
-output = parent.children[1].innerText='child two';
-output = parent.children[1].style.color='red';
 
-parent.firstElementChild.innerText = 'child one';
-parent.firstElementChild.style.color = 'green';
 
-parent.lastElementChild.textContent = 'child three';
-parent.lastElementChild.style.color = 'purple';
-  
-// parent element
 
-const show = document.querySelector('.child');
-output= show.parentElement;
-output = show.parentElement.style.border = '1px solid blue'
-output = show.parentElement.style.padding = '10px'
-output = show.parentElement.style.width = '200px'
+const heading = document.querySelector('#title');
+heading.textContent = 'My Web Development Skills';
 
-// siblings element
+const firstParagraph = document.querySelector('.info');
 
-const secondItem = document.querySelector('.child:nth-child(2)')
-output = secondItem;
-// output = secondItem.nextElementSibling.style.width = '40px'
-output = secondItem.nextElementSibling.innerText;
-output = secondItem.nextElementSibling.style.background = 'beige'
+const paragraphs = document.querySelectorAll('.info');
 
-console.dir(output)
+const topicList = document.querySelector('#topics');
+const firstTopic = topicList.firstElementChild;
+const secondTopic = firstTopic.nextElementSibling;
+const thirdTopic = secondTopic.nextElementSibling;
+
+// add a new element 
+
+const newTopic = document.createElement('li');
+newTopic.textContent = 'DOM manipulation';
+topicList.appendChild(newTopic);
+
+// remove an element
+
+const removeTopic = firstTopic.nextElementSibling;
+removeTopic.remove()
+
+// css features
+secondTopic.style.color = 'red'
+topicList.firstElementChild.style.color = 'blue';
+topicList.lastElementChild.style.color = 'green'
+
+console.log(topicList);
+
